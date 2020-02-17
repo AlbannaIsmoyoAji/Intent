@@ -1,5 +1,6 @@
 package id.ac.polinema.intent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -26,8 +27,11 @@ public class BundleActivity extends AppCompatActivity {
     }
 
     public void handleSubmit(View view) {
+        Intent intent = new Intent(this, ProfileBundleActivity.class);
+        intent.putExtra("key", "value");
         String username = usernameInput.getText().toString();
         String name = nameInput.getText().toString();
         int age = Integer.parseInt(ageInput.getText().toString());
+        startActivity(intent);
     }
 }
